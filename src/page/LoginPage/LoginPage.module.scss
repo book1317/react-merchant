@@ -1,0 +1,21 @@
+.homePageContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .loginFormContainer {
+    margin-top: 15px;
+
+    .bottomForm {
+      margin-top: -5px;
+    }
+  }
+}
