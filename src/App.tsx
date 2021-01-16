@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react'
 import { Router, Route } from 'react-router-dom'
 import 'antd/dist/antd.less'
 import history from 'utils/History'
@@ -11,14 +10,12 @@ function App() {
   return (
     <div className="App">
       <Router history={history}>
-        <Fragment>
-          <Route path={PageName.login} component={LoginPage} />
-          <Route path={PageName.register} component={RegisterPage} />
-          <Route path={'/'} component={MerchantPage} />
-          {/* <Route exact path="/">
+        <Route path={PageName.login} component={LoginPage} />
+        <Route path={PageName.register} component={RegisterPage} />
+        <Route path={'/'} component={MerchantPage} />
+        {/* <Route exact path="/">
             <Redirect to={PageName.login} />
           </Route> */}
-        </Fragment>
       </Router>
     </div>
   )

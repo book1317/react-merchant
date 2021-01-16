@@ -1,16 +1,12 @@
-// @ts-ignore
-// import config from "config";
 import { createBrowserHistory  } from 'history'
 
 export class History {
   getObject() {
-    // return createBrowserHistory({ basename: config.prefixUrl });
     return createBrowserHistory({ basename: '/' })
   }
 
   replace(url: string) {
     const historyObj = createBrowserHistory({
-      // basename: config.prefixUrl,
       forceRefresh: true,
     });
     historyObj.replace(url);
@@ -18,7 +14,6 @@ export class History {
 
   push(url: string) {
     const historyObj = createBrowserHistory({
-      // basename: config.prefixUrl,
       basename: '/',
       forceRefresh: true,
     })

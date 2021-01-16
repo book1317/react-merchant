@@ -19,7 +19,7 @@ const MenuList = [
     key: PageName.transaction,
   },
   {
-    key: '3',
+    key: PageName.login,
     content: 'Log out',
   },
 ]
@@ -31,6 +31,7 @@ class SideBar extends React.PureComponent<ISideBarProps, ISideBarState> {
       key={props.key}
       onClick={() => {
         history.replace(props.key)
+        // window.history.replaceState(null, '', props.key)
       }}
     >
       {props.content}
