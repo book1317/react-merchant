@@ -1,7 +1,8 @@
 const PageName = {
   login: '/login',
-  inventory: '/inventory',
   register: '/register',
+  inventory: '/inventory',
+  transaction: '/transaction',
 }
 
 export default PageName
