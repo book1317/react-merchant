@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/omise-v2/static/css/main.5e6acf36.chunk.css",
-    "main.js": "/omise-v2/static/js/main.5c1390f0.chunk.js",
-    "main.js.map": "/omise-v2/static/js/main.5c1390f0.chunk.js.map",
+    "main.css": "/omise-v2/static/css/main.8154e30a.chunk.css",
+    "main.js": "/omise-v2/static/js/main.7f470f16.chunk.js",
+    "main.js.map": "/omise-v2/static/js/main.7f470f16.chunk.js.map",
     "runtime-main.js": "/omise-v2/static/js/runtime-main.82171f83.js",
     "runtime-main.js.map": "/omise-v2/static/js/runtime-main.82171f83.js.map",
     "static/css/2.bad5a811.chunk.css": "/omise-v2/static/css/2.bad5a811.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.f06538d7.chunk.js.map": "/omise-v2/static/js/3.f06538d7.chunk.js.map",
     "index.html": "/omise-v2/index.html",
     "static/css/2.bad5a811.chunk.css.map": "/omise-v2/static/css/2.bad5a811.chunk.css.map",
-    "static/css/main.5e6acf36.chunk.css.map": "/omise-v2/static/css/main.5e6acf36.chunk.css.map",
+    "static/css/main.8154e30a.chunk.css.map": "/omise-v2/static/css/main.8154e30a.chunk.css.map",
     "static/js/2.1bedaf28.chunk.js.LICENSE.txt": "/omise-v2/static/js/2.1bedaf28.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.82171f83.js",
     "static/css/2.bad5a811.chunk.css",
     "static/js/2.1bedaf28.chunk.js",
-    "static/css/main.5e6acf36.chunk.css",
-    "static/js/main.5c1390f0.chunk.js"
+    "static/css/main.8154e30a.chunk.css",
+    "static/js/main.7f470f16.chunk.js"
   ]
 }
