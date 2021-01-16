@@ -1,18 +1,26 @@
 import React from 'react'
 import css from './LoginPage.module.scss'
 import { Form, Input, Button, Checkbox } from 'antd'
-import { history } from 'utils/History'
+import history from 'utils/History'
 import PageName from 'constant/PageName'
 
-export interface IHomePageProps {}
+export interface ILoginPageProps {}
 
-export interface IHomePageState {}
+export interface ILoginPageState {}
 
-class HomePage extends React.Component<IHomePageProps, IHomePageState> {
+class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
   // state = { :  }
+  componentDidMount() {
+    console.log('didmount')
+  }
+
   onFinish = (values: any) => {
     console.log('Success:', values)
+    const { username, password } = values
+    // if (username === 'admin' && password === 'admin') {
+    localStorage.setItem('isAuthen', 'OK')
     history.push(PageName.inventory)
+    // }
   }
 
   onFinishFailed = (errorInfo: any) => {
@@ -21,7 +29,7 @@ class HomePage extends React.Component<IHomePageProps, IHomePageState> {
 
   render() {
     return (
-      <div className={css.homePageContainer}>
+      <div className={css.LoginPageContainer}>
         <div className={css.title}>Omise V2</div>
         <div className={css.loginFormContainer}>
           <Form
@@ -47,25 +55,37 @@ class HomePage extends React.Component<IHomePageProps, IHomePageState> {
               <Input.Password placeholder="Password" className={'rounded'} />
             </Form.Item>
 
-            <Form.Item>
-              <Form.Item name="remember" valuePropName="checked" noStyle>
-                <Checkbox>Remember</Checkbox>
-              </Form.Item>
-
-              <a className="login-form-forgot" href="htts://google.com">
-                Forgot Password
-              </a>
+            <Form.Item name="remember" valuePropName="checked" noStyle>
+              <Checkbox>Remember</Checkbox>
             </Form.Item>
 
-            <Form.Item>
+            <a className="login-form-forgot" href="htts://google.com">
+              Forgot Password
+            </a>
+
+            <div>
               <Button
                 type="primary"
                 htmlType="submit"
-                className={'w-100 rounded'}
+                className={'w-100 rounded mt-2 mb-2'}
               >
                 Login
               </Button>
-            </Form.Item>
+            </div>
+
+            <div>
+              <Button
+                type="primary"
+                htmlType="submit"
+                className={'w-100 rounded bg-secondary border-secondary'}
+                color={'black'}
+                onClick={() => {
+                  history.push(PageName.register)
+                }}
+              >
+                Register
+              </Button>
+            </div>
           </Form>
         </div>
       </div>
@@ -73,4 +93,4 @@ class HomePage extends React.Component<IHomePageProps, IHomePageState> {
   }
 }
 
-export default HomePage
+export default LoginPage

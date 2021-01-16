@@ -1,4 +1,6 @@
-.homePageContainer {
+@import 'common/style/variable.scss';
+
+.LoginPageContainer {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -17,5 +19,10 @@
     .bottomForm {
       margin-top: -5px;
     }
+  }
+
+  .registerText {
+    margin: 5px 0px;
+    color: $blueTextColor;
   }
 }

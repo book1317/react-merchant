@@ -2,7 +2,7 @@ import { createBrowserHistory  } from 'history'
 
 export class History {
   getObject() {
-    return createBrowserHistory({ basename: '/' })
+    return createBrowserHistory({ basename: '/omise-v2/' })
   }
 
   replace(url: string) {
@@ -14,7 +14,6 @@ export class History {
 
   push(url: string) {
     const historyObj = createBrowserHistory({
-      basename: '/',
       forceRefresh: true,
     })
     historyObj.push(url)

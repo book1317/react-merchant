@@ -1,7 +1,7 @@
 import React from 'react'
 import { Layout, Menu } from 'antd'
 import PageName from 'constant/PageName'
-import { history } from 'utils/History'
+import history from 'utils/History'
 
 const { Sider } = Layout
 
@@ -19,28 +19,38 @@ const MenuList = [
     key: PageName.transaction,
   },
   {
-    key: PageName.login,
     content: 'Log out',
+    key: PageName.login,
   },
 ]
 
 class SideBar extends React.PureComponent<ISideBarProps, ISideBarState> {
+  state = { selectKey: [] }
   renderListMenu = (props: any) => (
     <Menu.Item
       className={'mt-0 mb-0'}
       key={props.key}
       onClick={() => {
+        if (props.key === PageName.login) {
+          localStorage.removeItem('isAuthen')
+        }
         history.replace(props.key)
-        // window.history.replaceState(null, '', props.key)
+        this.forceUpdate()
       }}
     >
       {props.content}
     </Menu.Item>
   )
 
+  componentDidMount() {
+    console.log('didmount sidbar')
+    this.forceUpdate()
+  }
+
   render() {
-    let keyPath = window.location.pathname
-    const selectKey = [keyPath]
+    // let keyPath = window.location.pathname
+    let keyPath = window.location.pathname.split('/')
+    const selectKey = ['/' + keyPath[2]]
 
     return (
       <Sider width={150} className="site-layout-background">
@@ -48,7 +58,7 @@ class SideBar extends React.PureComponent<ISideBarProps, ISideBarState> {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={[PageName.inventory]}
-          defaultOpenKeys={['sub1']}
+          defaultOpenKeys={[PageName.inventory]}
           style={{ height: '100%', borderRight: 0 }}
           selectedKeys={selectKey}
         >

@@ -1,15 +1,10 @@
 import React from 'react'
-import { Table, Tag } from 'antd'
+import { Table, Tag, Modal } from 'antd'
 import css from './InventoryPage.module.scss'
-import Modal from 'antd/lib/modal/Modal'
 
 interface IImageDetail {
   name: string
   imageURL: string
-}
-
-interface IStatus {
-  status: string
 }
 
 const ItemStatus = {
@@ -53,6 +48,11 @@ class InventoryPage extends React.Component<
       name: '',
     },
   }
+
+  componentDidMount() {
+    console.log('didmount')
+  }
+
   openImageModal = (image: IImageDetail) => {
     this.setState({ currentImage: image, isShowImage: true })
   }
@@ -132,10 +132,13 @@ class InventoryPage extends React.Component<
     return (
       <div className={css.inventoryPage}>
         <Modal
+          maskTransitionName=""
+          // mask={false}
           title={currentImage.name || 'Title'}
           visible={isShowImage}
           onOk={this.handleSubmit}
           onCancel={this.handleCancel}
+          // centered
         >
           <div>
             <img

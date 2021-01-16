@@ -2,10 +2,11 @@ import React from 'react'
 import { Layout } from 'antd'
 import css from './MerchantPage.module.scss'
 import SideBar from '../Common/SideBar/SideBar'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { Redirect, Route, Router, Switch } from 'react-router-dom'
 import PageName from 'constant/PageName'
 import InventoryPage from '../InventoryPage/InventoryPage'
 import TransactionPage from '../TransactionPage/TransactionPage'
+import history from 'utils/History'
 
 const { Header } = Layout
 
@@ -17,6 +18,13 @@ class MerchantPage extends React.Component<
   IMerchantPageProps,
   IMerchantPageState
 > {
+  componentDidMount() {
+    const isLogin = localStorage.getItem('isAuthen')
+    console.log('isLogin', isLogin)
+    if (!isLogin || isLogin !== 'OK') {
+      history.replace(PageName.login)
+    }
+  }
   render() {
     return (
       <Layout className={css.merchantPage}>
@@ -29,7 +37,7 @@ class MerchantPage extends React.Component<
             <Switch>
               <Route path={PageName.inventory} component={InventoryPage} />
               <Route path={PageName.transaction} component={TransactionPage} />
-              <Route exact path="/">
+              <Route path="/">
                 <Redirect to={PageName.inventory} />
               </Route>
             </Switch>

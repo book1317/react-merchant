@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './RegisterPage.module.scss'
 import { Form, Input, Button } from 'antd'
-import { history } from 'utils/History'
+import history from 'utils/History'
 import PageName from 'constant/PageName'
 
 export interface IRegisterPageProps {}
@@ -13,15 +13,17 @@ class RegisterPage extends React.Component<
   IRegisterPageState
 > {
   // state = { :  }
+  componentDidMount() {
+    console.log('didmount')
+  }
 
   onFinish = (values: any) => {
     console.log('Success:', values)
-    history.push(PageName.inventory)
+    history.push(PageName.login)
   }
 
   onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo)
-    history.push(PageName.inventory)
   }
 
   render() {

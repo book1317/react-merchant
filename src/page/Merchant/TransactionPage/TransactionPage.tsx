@@ -9,6 +9,10 @@ class TransactionPage extends React.Component<
   ITransactionPageState
 > {
   // state = { :  }
+  componentDidMount() {
+    console.log('didmount')
+  }
+
   render() {
     return <div>Transaction</div>
   }
