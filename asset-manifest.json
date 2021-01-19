@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/omise-v2/static/css/main.1f7fdec1.chunk.css",
-    "main.js": "/omise-v2/static/js/main.e57915ba.chunk.js",
-    "main.js.map": "/omise-v2/static/js/main.e57915ba.chunk.js.map",
-    "runtime-main.js": "/omise-v2/static/js/runtime-main.cc2467f4.js",
-    "runtime-main.js.map": "/omise-v2/static/js/runtime-main.cc2467f4.js.map",
+    "main.css": "/omise-v2/static/css/main.162fce93.chunk.css",
+    "main.js": "/omise-v2/static/js/main.b619de75.chunk.js",
+    "main.js.map": "/omise-v2/static/js/main.b619de75.chunk.js.map",
+    "runtime-main.js": "/omise-v2/static/js/runtime-main.d5cd3be6.js",
+    "runtime-main.js.map": "/omise-v2/static/js/runtime-main.d5cd3be6.js.map",
     "static/css/2.bad5a811.chunk.css": "/omise-v2/static/css/2.bad5a811.chunk.css",
-    "static/js/2.296ccd1d.chunk.js": "/omise-v2/static/js/2.296ccd1d.chunk.js",
-    "static/js/2.296ccd1d.chunk.js.map": "/omise-v2/static/js/2.296ccd1d.chunk.js.map",
-    "static/js/3.d1742137.chunk.js": "/omise-v2/static/js/3.d1742137.chunk.js",
-    "static/js/3.d1742137.chunk.js.map": "/omise-v2/static/js/3.d1742137.chunk.js.map",
+    "static/js/2.6ad904e4.chunk.js": "/omise-v2/static/js/2.6ad904e4.chunk.js",
+    "static/js/2.6ad904e4.chunk.js.map": "/omise-v2/static/js/2.6ad904e4.chunk.js.map",
+    "static/js/3.8245b795.chunk.js": "/omise-v2/static/js/3.8245b795.chunk.js",
+    "static/js/3.8245b795.chunk.js.map": "/omise-v2/static/js/3.8245b795.chunk.js.map",
     "index.html": "/omise-v2/index.html",
     "static/css/2.bad5a811.chunk.css.map": "/omise-v2/static/css/2.bad5a811.chunk.css.map",
-    "static/css/main.1f7fdec1.chunk.css.map": "/omise-v2/static/css/main.1f7fdec1.chunk.css.map",
-    "static/js/2.296ccd1d.chunk.js.LICENSE.txt": "/omise-v2/static/js/2.296ccd1d.chunk.js.LICENSE.txt",
+    "static/css/main.162fce93.chunk.css.map": "/omise-v2/static/css/main.162fce93.chunk.css.map",
+    "static/js/2.6ad904e4.chunk.js.LICENSE.txt": "/omise-v2/static/js/2.6ad904e4.chunk.js.LICENSE.txt",
     "static/media/FacebookLive.9b12d7b6.png": "/omise-v2/static/media/FacebookLive.9b12d7b6.png",
     "static/media/Messager.40861bcf.png": "/omise-v2/static/media/Messager.40861bcf.png",
     "static/media/index.scss": "/omise-v2/static/media/NotoSansThai-SemiBold.e5f0ff40.eot"
   },
   "entrypoints": [
-    "static/js/runtime-main.cc2467f4.js",
+    "static/js/runtime-main.d5cd3be6.js",
     "static/css/2.bad5a811.chunk.css",
-    "static/js/2.296ccd1d.chunk.js",
-    "static/css/main.1f7fdec1.chunk.css",
-    "static/js/main.e57915ba.chunk.js"
+    "static/js/2.6ad904e4.chunk.js",
+    "static/css/main.162fce93.chunk.css",
+    "static/js/main.b619de75.chunk.js"
   ]
 }
