@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/omise-v2/static/css/main.1f7fdec1.chunk.css",
-    "main.js": "/omise-v2/static/js/main.d7a55bff.chunk.js",
-    "main.js.map": "/omise-v2/static/js/main.d7a55bff.chunk.js.map",
+    "main.js": "/omise-v2/static/js/main.d6fc7076.chunk.js",
+    "main.js.map": "/omise-v2/static/js/main.d6fc7076.chunk.js.map",
     "runtime-main.js": "/omise-v2/static/js/runtime-main.cc2467f4.js",
     "runtime-main.js.map": "/omise-v2/static/js/runtime-main.cc2467f4.js.map",
     "static/css/2.bad5a811.chunk.css": "/omise-v2/static/css/2.bad5a811.chunk.css",
@@ -23,6 +23,6 @@
     "static/css/2.bad5a811.chunk.css",
     "static/js/2.296ccd1d.chunk.js",
     "static/css/main.1f7fdec1.chunk.css",
-    "static/js/main.d7a55bff.chunk.js"
+    "static/js/main.d6fc7076.chunk.js"
   ]
 }
