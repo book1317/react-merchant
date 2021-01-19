@@ -1,0 +1,137 @@
+$font-path: '/fonts/';
+
+// NotoSansThai
+@font-face {
+  font-family: 'NotoSansThai';
+  src: url('#{$font-path}NotoSansThai/NotoSansThai-Light.eot');
+  src: url('#{$font-path}NotoSansThai/NotoSansThai-Light.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Light.woff') format('woff'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Light.ttf') format('truetype'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Light.svg#NotoSansThai-Light')
+      format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSansThai';
+  src: url('#{$font-path}NotoSansThai/NotoSansThai-Regular.eot');
+  src: url('#{$font-path}NotoSansThai/NotoSansThai-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Regular.woff') format('woff'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Regular.ttf') format('truetype'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Regular.svg#NotoSansThai-Regular')
+      format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSansThai';
+  src: url('#{$font-path}NotoSansThai/NotoSansThai-Regular.eot');
+  src: url('#{$font-path}NotoSansThai/NotoSansThai-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Regular.woff') format('woff'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Regular.ttf') format('truetype'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Regular.svg#NotoSansThai-Regular')
+      format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSansThai';
+  src: url('#{$font-path}NotoSansThai/NotoSansThai-Medium.eot');
+  src: url('#{$font-path}NotoSansThai/NotoSansThai-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Medium.woff') format('woff'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Medium.ttf') format('truetype'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-Medium.svg#NotoSansThai-Medium')
+      format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSansThai';
+  src: url('#{$font-path}NotoSansThai/NotoSansThai-SemiBold.eot');
+  src: url('#{$font-path}NotoSansThai/NotoSansThai-SemiBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-SemiBold.woff') format('woff'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-SemiBold.ttf')
+      format('truetype'),
+    url('#{$font-path}NotoSansThai/NotoSansThai-SemiBold.svg#NotoSansThai-SemiBold')
+      format('svg');
+  font-weight: 800;
+  font-style: normal;
+}
+
+// NotoSans
+@font-face {
+  font-family: 'NotoSans';
+  src: url('#{$font-path}NotoSans/NotoSans-Light.eot');
+  src: url('#{$font-path}NotoSans/NotoSans-Light.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}NotoSans/NotoSans-Light.woff') format('woff'),
+    url('#{$font-path}NotoSans/NotoSans-Light.ttf') format('truetype'),
+    url('#{$font-path}NotoSans/NotoSans-Light.svg#NotoSans-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url('#{$font-path}NotoSans/NotoSans-Regular.eot');
+  src: url('#{$font-path}NotoSans/NotoSans-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}NotoSans/NotoSans-Regular.woff') format('woff'),
+    url('#{$font-path}NotoSans/NotoSans-Regular.ttf') format('truetype'),
+    url('#{$font-path}NotoSans/NotoSans-Regular.svg#NotoSans-Regular')
+      format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url('#{$font-path}NotoSans/NotoSans-Regular.eot');
+  src: url('#{$font-path}NotoSans/NotoSans-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}NotoSans/NotoSans-Regular.woff') format('woff'),
+    url('#{$font-path}NotoSans/NotoSans-Regular.ttf') format('truetype'),
+    url('#{$font-path}NotoSans/NotoSans-Regular.svg#NotoSans-Regular')
+      format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url('#{$font-path}NotoSans/NotoSans-Medium.eot');
+  src: url('#{$font-path}NotoSans/NotoSans-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}NotoSans/NotoSans-Medium.woff') format('woff'),
+    url('#{$font-path}NotoSans/NotoSans-Medium.ttf') format('truetype'),
+    url('#{$font-path}NotoSans/NotoSans-Medium.svg#NotoSans-Medium')
+      format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url('#{$font-path}NotoSans/NotoSans-SemiBold.eot');
+  src: url('#{$font-path}NotoSans/NotoSans-SemiBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}NotoSans/NotoSans-SemiBold.woff') format('woff'),
+    url('#{$font-path}NotoSans/NotoSans-SemiBold.ttf') format('truetype'),
+    url('#{$font-path}NotoSans/NotoSans-SemiBold.svg#NotoSans-SemiBold')
+      format('svg');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@mixin font-default {
+  font-family: NotoSansThai, NotoSans, sans-serif !important;
+}

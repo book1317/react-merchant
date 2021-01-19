@@ -1,0 +1,147 @@
+.homePage {
+  height: 100vh;
+
+  background: linear-gradient(180deg, #1eace0, #bcedff);
+  // background-size: 600% 600%;
+  // animation: gradient 10s ease infinite;
+
+  // @keyframes gradient {
+  //   0% {
+  //     background-position: 0% 50%;
+  //   }
+  //   50% {
+  //     background-position: 100% 50%;
+  //   }
+  //   100% {
+  //     background-position: 0% 50%;
+  //   }
+  // }
+
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: white;
+    min-height: 60px;
+    padding: 10px 30px;
+
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+
+      div {
+        cursor: pointer;
+        margin-left: 20px;
+        transition: 0.5s;
+      }
+
+      div:hover {
+        cursor: pointer;
+        color: black;
+      }
+
+      .loginButton {
+        background-color: #1eace0;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 16px;
+      }
+
+      .loginButton:hover {
+        color: white;
+        background-color: rgb(120, 219, 226);
+      }
+    }
+  }
+
+  .contentContainer {
+    color: white;
+
+    .title {
+      text-align: center;
+      padding: 0px 30px;
+      margin-top: 40px;
+      font-size: 36px;
+      font-weight: 600;
+    }
+
+    .content {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+
+  .startButtonContainer {
+    margin: 32px 0px;
+    display: flex;
+    justify-content: center;
+
+    .startButton {
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 10px;
+      padding: 10px 20px;
+      color: #1eace0;
+      background-color: white;
+    }
+  }
+
+  .contentContainer2 {
+    padding: 30px 24px;
+    // color: #1eace0;
+    // color: white;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+
+    .title {
+      text-align: center;
+      padding: 0px 30px;
+      margin-top: 40px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .feature {
+      margin-top: 30px;
+      padding: 0px 24px;
+      .featureHeader {
+        display: flex;
+
+        .featureHeaderText {
+          margin-left: 20px;
+          line-height: 1.4;
+
+          .featureTitle {
+            font-size: 26px;
+            font-weight: 600;
+          }
+
+          .featureSubTitle {
+            color: #5fc7d8;
+          }
+        }
+      }
+
+      .featureContent {
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+
+    .iconImage {
+      > img {
+        width: 120px;
+        height: 60px;
+        object-fit: contain;
+      }
+    }
+  }
+}
