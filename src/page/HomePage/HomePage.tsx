@@ -2,6 +2,8 @@ import React from 'react'
 import css from './HomePage.module.scss'
 import FacebookLive from 'images/FacebookLive.png'
 import Messager from 'images/Messager.png'
+import PageName from 'constant/PageName'
+import history from 'utils/History'
 
 export interface IHomePageProps {}
 
@@ -40,7 +42,12 @@ class HomePage extends React.Component<IHomePageProps, IHomePageState> {
           </div>
         </div>
 
-        <div className={css.startButtonContainer}>
+        <div
+          className={css.startButtonContainer}
+          onClick={() => {
+            history.push(PageName.facebook)
+          }}
+        >
           <div className={css.startButton}>เริ่มต้นใช้งาน</div>
         </div>
 

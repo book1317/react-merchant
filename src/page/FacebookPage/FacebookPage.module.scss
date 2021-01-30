@@ -1,0 +1,28 @@
+@import 'common/style/variable.scss';
+
+.LoginPageContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .loginFormContainer {
+    margin-top: 15px;
+
+    .bottomForm {
+      margin-top: -5px;
+    }
+  }
+
+  .registerText {
+    margin: 5px 0px;
+    color: $blueTextColor;
+  }
+}

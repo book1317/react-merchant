@@ -6,6 +6,7 @@ const PageName = {
   transaction: '/transaction',
   merchant: '/merchant',
   customer: '/customer',
+  facebook: '/facebook',
 }
 
 export default PageName
