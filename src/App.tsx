@@ -21,7 +21,8 @@ function App() {
           <Route path={PageName.facebook} component={FacebookPage} />
           <Route path={'/'} component={MerchantPage} />
           <Route exact path="/">
-            <Redirect to={PageName.login} />
+            {/* <Redirect to={PageName.LoginPage} /> */}
+            <Redirect to={PageName.home} />
           </Route>
         </Switch>
       </Router>

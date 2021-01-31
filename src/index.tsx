@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { Provider } from 'mobx-react'
+import Store from 'store/Store'
 import 'antd/dist/antd.less'
 
 ReactDOM.render(
-  <Provider>
+  <Provider {...Store}>
     <App />
   </Provider>,
   document.getElementById('root')

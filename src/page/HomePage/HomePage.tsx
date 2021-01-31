@@ -4,6 +4,7 @@ import FacebookLive from 'images/FacebookLive.png'
 import Messager from 'images/Messager.png'
 import PageName from 'constant/PageName'
 import history from 'utils/History'
+import CRM from 'images/CRM.png'
 
 export interface IHomePageProps {}
 
@@ -83,37 +84,39 @@ class HomePage extends React.Component<IHomePageProps, IHomePageState> {
                 <img src={Messager} alt="" />
               </div>
               <div className={css.featureHeaderText}>
-                <div className={css.featureTitle}>AI-Messenger Plug-in</div>
+                <div className={css.featureTitle}>
+                  AI-Chatbot แชทบอทอัจฉริยะ
+                </div>
                 <div className={css.featureSubTitle}>
-                  สำหรับร้านค้าที่รับออเดอร์ผ่าน Facebook messenger
+                  ผู้ขายที่ได้รับคำสั่งซื้อจากโพสต์ผลิตภัณฑ์
                 </div>
               </div>
             </div>
             <div className={css.featureContent}>
-              ฟีเจอร์ในระบบขายของออนไลน์ Shoplus
-              นี้ตอบโจทย์กับเพจขายของและลูกค้าขาเม้าท์สุดๆ ด้วยระบบ Shoplus
-              plug-in ช่วยคุณเก็บออเดอร์ พร้อมส่งบิลอัตโนมัติ ปิดการขายได้ง่ายๆ
-              ได้เลยทันที แค่นี้ก็มีเวลาเหลือเฟือไปขายต่อได้อีกเยอะ!
+              เมื่อลูกค้าต้องการสั่งซื้อสินค้า
+              สามารถคอมเมนต์ใต้โพสขายของร้านค้าได้เลย ระบบแชทบอทของช้อปพลัส
+              จะช่วยทักหาลูกค้า พร้อมเปิดบิล ยืนยันออเดอร์
+              และปิดการขายอัตโนมัติบนFacebook
             </div>
           </div>
 
           <div className={css.feature}>
             <div className={css.featureHeader}>
               <div className={css.iconImage}>
-                <img src={Messager} alt="" />
+                <img src={CRM} alt="" />
               </div>
               <div className={css.featureHeaderText}>
-                <div className={css.featureTitle}>AI-Messenger Plug-in</div>
+                <div className={css.featureTitle}>ระบบ Social CRM</div>
                 <div className={css.featureSubTitle}>
-                  สำหรับร้านค้าที่รับออเดอร์ผ่าน Facebook messenger
+                  รักษาความสัมพันธ์กับลูกค้าบน Social
                 </div>
               </div>
             </div>
             <div className={css.featureContent}>
-              ฟีเจอร์ในระบบขายของออนไลน์ Shoplus
-              นี้ตอบโจทย์กับเพจขายของและลูกค้าขาเม้าท์สุดๆ ด้วยระบบ Shoplus
-              plug-in ช่วยคุณเก็บออเดอร์ พร้อมส่งบิลอัตโนมัติ ปิดการขายได้ง่ายๆ
-              ได้เลยทันที แค่นี้ก็มีเวลาเหลือเฟือไปขายต่อได้อีกเยอะ!
+              ฟีเจอร์ที่จะช่วยให้ร้านค้ารักษาความสัมพันธ์ของลูกค้าให้อยู่กับร้านค้าของคุณนานยิ่งขึ้นด้วย
+              AI ที่จะช่วยคุณเก็บข้อมูลพฤติกรรมการซื้อของลูกค้า
+              พร้อมจัดแบ่งหมวดหมู่ลูกค้า
+              ทำให้สามารถสื่อสารได้ตรงกลุ่มมากยิ่งขึ้น
             </div>
           </div>
         </div>
