@@ -3,11 +3,7 @@ import css from './FacebookPage.module.scss'
 import history from 'utils/History'
 import PageName from 'constant/PageName'
 import FacebookLogin from 'react-facebook-login'
-import {
-  IFacebookAuthen,
-  IFacebookPageList,
-  IFacebookStore,
-} from 'store/FacebookStore.d'
+import { IFacebookAuthen, IFacebookStore } from 'store/FacebookStore.d'
 import { inject, observer } from 'mobx-react'
 
 export interface ILoginPageProps {
@@ -23,14 +19,10 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
   async componentDidMount() {}
 
   responseFacebook = async (facebookAuthen: IFacebookAuthen) => {
-    console.log(facebookAuthen)
+    this.props.facebook.setFacebookAuthen(facebookAuthen)
     const { userID, accessToken } = facebookAuthen
-    // const facebookPageList: IFacebookPageList[] =
-    //   (await getUserPageList(userID, accessToken)) || []
-
     await this.props.facebook.getUserPageWithImageList(userID, accessToken)
-    const facebookPageImageList = this.props.facebook.getUserPageWithImageListJS()
-    console.log('facebookPageImageList', facebookPageImageList)
+    history.push(PageName.facebookSelect)
   }
 
   render() {

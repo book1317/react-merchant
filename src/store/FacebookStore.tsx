@@ -42,6 +42,14 @@ class FacebookStore {
     }
   }
 
+  setFacebookAuthen = (facebookAuthen: IFacebookAuthen) => {
+    this.facebookAuthen = facebookAuthen
+  }
+
+  getFacebookAuthenJS = () => {
+    return toJS(this.facebookAuthen)
+  }
+
   getUserPageList = async (userID: string, accessToken: string) => {
     const response = await FacebookAPI.getUserPageList(userID, accessToken)
     this.facebookPageList = response || []

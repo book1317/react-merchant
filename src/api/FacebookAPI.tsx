@@ -1,16 +1,17 @@
 import { get } from 'api/APIManager'
 
+const baseURL = 'https://graph.facebook.com/v9.0/'
+
 class FacebookAPI {
   getUserPageList = async (userID: string, accessToken: string) => {
-    const params = `https://graph.facebook.com/${userID}/accounts?access_token=${accessToken}`
+    const params = `${baseURL}/${userID}/accounts?access_token=${accessToken}&width=100`
     const response = await get(params)
     return response.data
   }
 
   getUserPageImage = async (pageID: string) => {
-    const params = `https://graph.facebook.com/v9.0/${pageID}/picture?redirect=0`
+    const params = `${baseURL}/${pageID}/picture?redirect=0&width=100`
     const response = await get(params)
-    console.log('response.data', response.data)
     return response.data
   }
 }

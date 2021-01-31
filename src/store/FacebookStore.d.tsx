@@ -34,8 +34,10 @@ export interface IFacebookStore {
   getUserPageList: (userID: string, accessToken: string) => void
   getUserPageImage: (pageID: string) => void
   getUserPageWithImageList: (userID: string, accessToken: string) => void
+  setFacebookAuthen: (facebookAuthen: IFacebookAuthen) => void
 
   getUserPageListJS: () => IFacebookAuthen[]
   getUserPageWithImageListJS: () => IFacebookAuthen[]
   getUserPageImageListJS: () => IFacebookAuthen[]
+  getFacebookAuthenJS: () => IFacebookAuthen
 }
