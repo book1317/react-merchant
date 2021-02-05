@@ -1,6 +1,8 @@
 import React from 'react'
 import { Table, Tag, Modal } from 'antd'
 import css from './InventoryPage.module.scss'
+import { IFacebookStore } from 'store/FacebookStore.d'
+import { inject, observer } from 'mobx-react'
 
 interface IImageDetail {
   name: string
@@ -13,7 +15,9 @@ const ItemStatus = {
   ACTIVE: 'ACTIVE',
 }
 
-export interface IInventoryPageProps {}
+export interface IInventoryPageProps {
+  facebook: IFacebookStore
+}
 
 export interface IInventoryPageState {
   isShowImage: boolean
@@ -37,6 +41,8 @@ const INVENTORY_DATA = [
   },
 ]
 
+@inject('facebook')
+@observer
 class InventoryPage extends React.Component<
   IInventoryPageProps,
   IInventoryPageState
@@ -51,6 +57,7 @@ class InventoryPage extends React.Component<
 
   componentDidMount() {
     console.log('didmount')
+    const FacebookSelectPageImageList = this.props.facebook.getUserPageWithImageListJS()
   }
 
   openImageModal = (image: IImageDetail) => {

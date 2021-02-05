@@ -20,7 +20,7 @@ const MenuList = [
   },
   {
     content: 'Log out',
-    key: PageName.login,
+    key: PageName.facebookLogin,
   },
 ]
 
@@ -31,7 +31,7 @@ class SideBar extends React.PureComponent<ISideBarProps, ISideBarState> {
       className={'mt-0 mb-0'}
       key={props.key}
       onClick={() => {
-        if (props.key === PageName.login) {
+        if (props.key === PageName.facebookLogin) {
           localStorage.removeItem('isAuthen')
         }
         history.replace(props.key)

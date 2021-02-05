@@ -19,14 +19,14 @@ export interface IFacebookAuthen {
   url?: string
 }
 
-export interface IFacebookPageList {
+export interface IFacebookLoginPageList {
   access_token: string
   category: string //"Electronics"
   id: string
   name: string
 }
 
-export interface IFacebookPageImage {
+export interface IFacebookLoginPageImage {
   url: string
 }
 

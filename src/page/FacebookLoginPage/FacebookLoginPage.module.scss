@@ -1,0 +1,43 @@
+@import 'common/style/variable.scss';
+@import 'common/style/common.scss';
+
+.LoginPageContainer {
+  width: 100vw;
+  height: 100vh;
+  @include center();
+  background: linear-gradient(180deg, #1eace0, #bcedff);
+
+  .contentContainer {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    @include borderCard();
+    background-color: white;
+  }
+
+  .exampleImage {
+    padding: 30px 30px;
+
+    > img {
+      display: block;
+      margin: auto;
+      width: 90%;
+    }
+  }
+
+  .titleContainer {
+    margin-bottom: 20px;
+
+    .title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+
+  .facebookButton {
+    border-radius: 6px;
+  }
+}

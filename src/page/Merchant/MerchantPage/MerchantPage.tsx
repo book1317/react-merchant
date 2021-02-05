@@ -2,7 +2,7 @@ import React from 'react'
 import { Layout } from 'antd'
 import css from './MerchantPage.module.scss'
 import SideBar from '../Common/SideBar/SideBar'
-import { Redirect, Route, Router, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import PageName from 'constant/PageName'
 import InventoryPage from '../InventoryPage/InventoryPage'
 import TransactionPage from '../TransactionPage/TransactionPage'
@@ -31,7 +31,7 @@ class MerchantPage extends React.Component<
         <Header className={css.header}>
           <div className={css.title}>Omagase V2</div>
         </Header>
-        <Layout>
+        <Layout className={css.contentContainer}>
           <SideBar />
           <Layout style={{ padding: '24px 24px 24px' }}>
             <Switch>

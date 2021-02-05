@@ -1,19 +1,19 @@
 import { observable, toJS } from 'mobx'
 import FacebookAPI from 'api/FacebookAPI'
 import {
-  IFacebookPageList,
-  IFacebookPageImage,
+  IFacebookLoginPageList,
+  IFacebookLoginPageImage,
   IFacebookAuthen,
 } from 'store/FacebookStore.d'
 
 class FacebookStore {
   @observable facebookAuthen: IFacebookAuthen
-  @observable facebookPageList: IFacebookPageList[]
-  @observable facebookPageImage: IFacebookPageImage
+  @observable FacebookLoginPageList: IFacebookLoginPageList[]
+  @observable FacebookLoginPageImage: IFacebookLoginPageImage
 
   constructor() {
-    this.facebookPageList = []
-    this.facebookPageImage = {
+    this.FacebookLoginPageList = []
+    this.FacebookLoginPageImage = {
       url: '',
     }
     this.facebookAuthen = this.initFacebookAuthen()
@@ -52,31 +52,31 @@ class FacebookStore {
 
   getUserPageList = async (userID: string, accessToken: string) => {
     const response = await FacebookAPI.getUserPageList(userID, accessToken)
-    this.facebookPageList = response || []
+    this.FacebookLoginPageList = response || []
   }
 
   getUserPageWithImageList = async (userID: string, accessToken: string) => {
     const response = await FacebookAPI.getUserPageList(userID, accessToken)
-    this.facebookPageList = response || []
+    this.FacebookLoginPageList = response || []
 
-    if (this.facebookPageList.length > 0) {
+    if (this.FacebookLoginPageList.length > 0) {
       const data = await Promise.all(
-        this.facebookPageList.map(async (page) => {
+        this.FacebookLoginPageList.map(async (page) => {
           const response = await FacebookAPI.getUserPageImage(page.id)
           return { url: response.url || '', ...page }
         })
       )
-      this.facebookPageList = data
+      this.FacebookLoginPageList = data
     }
   }
 
   getUserPageImage = async (pageID: string) => {
     const response = await FacebookAPI.getUserPageImage(pageID)
-    this.facebookPageImage = response || []
+    this.FacebookLoginPageImage = response || []
   }
 
   getUserPageWithImageListJS = () => {
-    return toJS(this.facebookPageList)
+    return toJS(this.FacebookLoginPageList)
   }
 }
 

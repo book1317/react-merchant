@@ -6,7 +6,7 @@ import LoginPage from 'page/LoginPage/LoginPage'
 import MerchantPage from 'page/Merchant/MerchantPage/MerchantPage'
 import RegisterPage from 'page/Merchant/RegisterPage/RegisterPage'
 import CustomerPage from 'page/CustomerPage/CustomerPage'
-import FacebookPage from 'page/FacebookPage/FacebookPage'
+import FacebookLoginPage from 'page/FacebookLoginPage/FacebookLoginPage'
 import FacebookSelectPage from 'page/FacebookSelectPage/FacebookSelectPage'
 import HomePage from 'page/HomePage/HomePage'
 
@@ -19,15 +19,15 @@ function App() {
           <Route path={PageName.login} component={LoginPage} />
           <Route path={PageName.register} component={RegisterPage} />
           <Route path={PageName.customer} component={CustomerPage} />
-          <Route path={PageName.facebook} component={FacebookPage} />
+          <Route path={PageName.facebookLogin} component={FacebookLoginPage} />
           <Route
             path={PageName.facebookSelect}
             component={FacebookSelectPage}
           />
           <Route path={'/'} component={MerchantPage} />
           <Route exact path="/">
-            {/* <Redirect to={PageName.LoginPage} /> */}
-            <Redirect to={PageName.home} />
+            <Redirect to={PageName.facebookLogin} />
+            {/* <Redirect to={PageName.home} /> */}
           </Route>
         </Switch>
       </Router>

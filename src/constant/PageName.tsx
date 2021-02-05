@@ -6,7 +6,7 @@ const PageName = {
   transaction: '/transaction',
   merchant: '/merchant',
   customer: '/customer',
-  facebook: '/facebook',
+  facebookLogin: '/facebook-login',
   facebookSelect: '/facebook-select',
 }
 

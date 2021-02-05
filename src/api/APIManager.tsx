@@ -6,5 +6,12 @@ export const get = async (params: any) => {
   }
   const response = await fetch(params, requestOptions)
   const data = await response.json()
+  console.groupCollapsed(
+    `%cREQUESTED %cGET ${params}`,
+    'color: DodgerBlue',
+    'color: inherit'
+  )
+  console.log(data)
+  console.groupEnd()
   return data
 }

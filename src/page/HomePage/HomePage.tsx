@@ -46,7 +46,7 @@ class HomePage extends React.Component<IHomePageProps, IHomePageState> {
         <div
           className={css.startButtonContainer}
           onClick={() => {
-            history.push(PageName.facebook)
+            history.push(PageName.facebookLogin)
           }}
         >
           <div className={css.startButton}>เริ่มต้นใช้งาน</div>

@@ -4,16 +4,21 @@ import css from './FacebookSelectPage.module.scss'
 // import PageName from 'constant/PageName'
 import { IFacebookStore } from 'store/FacebookStore.d'
 import { inject, observer } from 'mobx-react'
+import history from 'utils/History'
+import PageName from 'constant/PageName'
 
-export interface ILoginPageProps {
+export interface IFacebookSelectPageProps {
   facebook: IFacebookStore
 }
 
-export interface ILoginPageState {}
+export interface IFacebookSelectPageState {}
 
 @inject('facebook')
 @observer
-class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
+class FacebookSelectPage extends React.Component<
+  IFacebookSelectPageProps,
+  IFacebookSelectPageState
+> {
   // state = { :  }
   async componentDidMount() {}
 
@@ -21,27 +26,34 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
     const facebookAuthen = this.props.facebook.getFacebookAuthenJS()
     const profileImage = facebookAuthen.picture.data.url
     console.log('facebookAuthen', facebookAuthen)
-    const facebookPageImageList = this.props.facebook.getUserPageWithImageListJS()
+    const FacebookSelectPageImageList = this.props.facebook.getUserPageWithImageListJS()
     return (
       <div className={css.facebookSelectPage}>
-        <div className={css.profileImage}>
-          <img src={profileImage} alt="" />
-        </div>
-        <div className={css.title}>{facebookAuthen.name}</div>
-        <div className={css.title}>กรุณาเลือกร้าน</div>
-        {facebookPageImageList.map((page) => {
-          return (
-            <div className={css.pageContainer}>
-              <div className={css.pageImage}>
-                <img src={page.url} alt="" />
+        <div className={css.contentContainer}>
+          <div className={css.profileImage}>
+            <img src={profileImage} alt="" />
+          </div>
+          <div className={css.title}>{facebookAuthen.name}</div>
+          <div className={css.subTitle}>กรุณาเลือกร้านที่ต้องการเชื่อมต่อ</div>
+          {FacebookSelectPageImageList.map((page) => {
+            return (
+              <div
+                className={css.pageContainer}
+                onClick={() => {
+                  history.push(PageName.merchant)
+                }}
+              >
+                <div className={css.pageImage}>
+                  <img src={page.url} alt="" />
+                </div>
+                <div className={css.pageName}>{page.name}</div>
               </div>
-              <div className={css.pageName}>{page.name}</div>
-            </div>
-          )
-        })}
+            )
+          })}
+        </div>
       </div>
     )
   }
 }
 
-export default LoginPage
+export default FacebookSelectPage
