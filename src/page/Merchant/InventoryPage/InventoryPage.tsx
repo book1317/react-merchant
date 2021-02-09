@@ -5,11 +5,12 @@ import { IFacebookStore } from 'store/FacebookStore.d'
 import { inject, observer } from 'mobx-react'
 import { formatPrice } from 'utils/Format'
 import ImgCrop from 'antd-img-crop'
+import ProductModal from './components/ProductModal'
 
 const catImage =
   'https://cf.shopee.co.th/file/18d8e8ef2e7ecd66a2ddbe885a01df30_tn'
 
-interface IProduct {
+export interface IProduct {
   name: string
   imageURL: string
   price: number
@@ -29,7 +30,6 @@ export interface IInventoryPageProps {
 export interface IInventoryPageState {
   isShowProductModal: boolean
   currentProduct: IProduct
-  fileList: any
 }
 
 const INVENTORY_DATA = [
@@ -61,7 +61,6 @@ class InventoryPage extends React.Component<
     this.state = {
       isShowProductModal: false,
       currentProduct: this.initProduct(),
-      fileList: [],
     }
     this.refUpload = React.createRef()
   }
@@ -83,14 +82,6 @@ class InventoryPage extends React.Component<
     this.setState({ currentProduct: product, isShowProductModal: true })
   }
 
-  handleCancel = () => {
-    this.setState({ isShowProductModal: false })
-  }
-
-  handleSubmit = () => {
-    this.setState({ isShowProductModal: false })
-  }
-
   onClickRow = (record: any) => {
     return {
       onClick: () => {
@@ -106,23 +97,12 @@ class InventoryPage extends React.Component<
     })
   }
 
-  onFinish = () => {}
+  setIsShowProductModal = (isShowProductModal: boolean) => {
+    this.setState({ isShowProductModal })
+  }
 
-  onFinishFailed = () => {}
-
-  onSelectImage = async ({ file }: any) => {
-    const { currentProduct } = this.state
-    let src = file.url
-    if (!src) {
-      src = await new Promise((resolve) => {
-        const reader = new FileReader()
-        reader.readAsDataURL(file.originFileObj as Blob)
-        reader.onload = () => resolve(reader.result)
-      })
-    }
-    let newCurrentProduct = currentProduct
-    newCurrentProduct.imageURL = src
-    this.setState({ currentProduct: newCurrentProduct })
+  setCurrentProduct = (currentProduct: IProduct) => {
+    this.setState({ currentProduct })
   }
 
   render() {
@@ -195,139 +175,16 @@ class InventoryPage extends React.Component<
       return item
     })
 
-    const { isShowProductModal, currentProduct, fileList } = this.state
+    const { isShowProductModal, currentProduct } = this.state
 
     return (
       <div className={css.inventoryPage}>
-        <Modal
-          maskTransitionName=""
-          title={currentProduct.name || 'Title'}
-          visible={isShowProductModal}
-          onOk={this.handleSubmit}
-          onCancel={this.handleCancel}
-          footer={''}
-        >
-          <div className={css.inventoryPageProductModal}>
-            <div className={css.productImage}>
-              <img
-                src={currentProduct.imageURL}
-                alt=""
-                onClick={() => {
-                  this.refUpload.current.click()
-                }}
-              />
-            </div>
-            <Form
-              layout="vertical"
-              name="nest-messages"
-              onFinish={this.onFinish}
-              onFinishFailed={this.onFinishFailed}
-            >
-              <Form.Item
-                name="productImage"
-                rules={[
-                  () => ({
-                    validator() {
-                      if (fileList.length > 0) {
-                        return Promise.resolve()
-                      }
-                      return Promise.reject('Please upload your product image!')
-                    },
-                  }),
-                ]}
-              >
-                <ImgCrop aspect={1 / 1} quality={1}>
-                  <Upload
-                    className={css.inventoryPageUpload}
-                    fileList={fileList}
-                    onChange={this.onSelectImage}
-                  >
-                    {fileList.length >= 8 ? null : (
-                      <div ref={this.refUpload}>+ Upload</div>
-                    )}
-                  </Upload>
-                </ImgCrop>
-              </Form.Item>
-
-              <Form.Item
-                name="productName"
-                label="Product Name"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input your product name!',
-                  },
-                ]}
-              >
-                <Input />
-              </Form.Item>
-              <Form.Item
-                name="detail"
-                label="Detail"
-                rules={[
-                  { required: true, message: 'Please input your detail!' },
-                ]}
-              >
-                <Input.TextArea />
-              </Form.Item>
-
-              <Form.Item
-                name="price"
-                label="Price"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input your price!',
-                  },
-                  // ({ getFieldValue }) => ({
-                  //   validator(_, price) {
-                  //     if (
-                  //       parseInt(price) <
-                  //       parseInt(getFieldValue('originalPrice'))
-                  //     ) {
-                  //       return Promise.resolve()
-                  //     }
-                  //     return Promise.reject(
-                  //       'Price should less than original price!'
-                  //     )
-                  //   },
-                  // }),
-                ]}
-              >
-                <Input type="number" />
-              </Form.Item>
-              <Form.Item
-                name="quantity"
-                label="Quantity"
-                rules={[
-                  { required: true, message: 'Please input your quantity!' },
-                ]}
-              >
-                <Input type="number" />
-              </Form.Item>
-
-              <Form.Item>
-                <div className="d-flex justify-content-end">
-                  <Button
-                    className={css.submitButton}
-                    type="primary"
-                    htmlType="submit"
-                  >
-                    Submit
-                  </Button>
-                  <Button
-                    className="cancel-button"
-                    onClick={() => {
-                      this.setState({ isShowProductModal: false })
-                    }}
-                  >
-                    Cancel
-                  </Button>
-                </div>
-              </Form.Item>
-            </Form>
-          </div>
-        </Modal>
+        <ProductModal
+          isShowProductModal={isShowProductModal}
+          currentProduct={currentProduct}
+          setIsShowProductModal={this.setIsShowProductModal}
+          setCurrentProduct={this.setCurrentProduct}
+        />
         <div className={css.optionMenuContainer}>
           <Input placeholder="ค้นหา" className={css.searchInput} />
           <Button className={css.addItemButton} onClick={this.onAddItem}>
