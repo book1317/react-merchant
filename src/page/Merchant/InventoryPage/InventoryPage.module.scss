@@ -1,8 +1,68 @@
 @import 'common/style/variable.scss';
 
 .inventoryPage {
+  .optionMenuContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+
+    .searchInput {
+      width: 40%;
+      border-radius: $borderRadius;
+    }
+    .addItemButton {
+      border-radius: $borderRadius;
+    }
+  }
+
   .imageDetail {
     color: $blueTextColor;
     cursor: pointer;
   }
+
+  .tableProduct {
+    display: flex;
+    align-items: center;
+    .productImage {
+      > img {
+        border-radius: 3px;
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+    }
+    .productName {
+      margin-left: 10px;
+    }
+  }
+
+  .tableContainer {
+    .tableRow {
+      :hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.inventoryPageProductModal {
+  .productImage {
+    display: flex;
+    justify-content: center;
+    > img {
+      cursor: pointer;
+      border-radius: $borderRadius;
+      width: 250px;
+      height: 250px;
+      object-fit: contain;
+    }
+  }
+
+  .submitButton {
+    margin-right: 10px;
+  }
+}
+
+.inventoryPageUpload {
+  display: none;
 }

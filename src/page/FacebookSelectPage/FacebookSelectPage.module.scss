@@ -12,7 +12,8 @@
     @include center();
     @include borderCard();
     padding: 25px;
-    width: 100%;
+    width: 50%;
+    min-width: 500px;
     flex-direction: column;
 
     .profileImage {

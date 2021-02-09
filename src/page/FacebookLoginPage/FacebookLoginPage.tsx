@@ -21,9 +21,12 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
   responseFacebook = async (facebookAuthen: IFacebookAuthen) => {
     this.props.facebook.setFacebookAuthen(facebookAuthen)
     const { userID, accessToken } = facebookAuthen
-    await this.props.facebook.getUserPageWithImageList(userID, accessToken)
-    history.push(PageName.facebookSelect)
+    await Promise.all([
+      this.props.facebook.getImageProfile(userID),
+      this.props.facebook.getUserPageWithImageList(userID, accessToken),
+    ])
     localStorage.setItem('isAuthen', 'OK')
+    history.push(PageName.facebookSelect)
   }
 
   render() {

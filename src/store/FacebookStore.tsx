@@ -10,6 +10,7 @@ class FacebookStore {
   @observable facebookAuthen: IFacebookAuthen
   @observable FacebookLoginPageList: IFacebookLoginPageList[]
   @observable FacebookLoginPageImage: IFacebookLoginPageImage
+  @observable profileImage: string
 
   constructor() {
     this.FacebookLoginPageList = []
@@ -17,6 +18,7 @@ class FacebookStore {
       url: '',
     }
     this.facebookAuthen = this.initFacebookAuthen()
+    this.profileImage = ''
   }
 
   initFacebookAuthen = () => {
@@ -44,6 +46,12 @@ class FacebookStore {
 
   setFacebookAuthen = (facebookAuthen: IFacebookAuthen) => {
     this.facebookAuthen = facebookAuthen
+  }
+
+  getImageProfile = async (UserID: string) => {
+    const response = await FacebookAPI.getImageProfile(UserID)
+    this.facebookAuthen.picture.data = response
+    this.profileImage = response
   }
 
   getFacebookAuthenJS = () => {

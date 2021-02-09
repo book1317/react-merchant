@@ -20,12 +20,16 @@ class FacebookSelectPage extends React.Component<
   IFacebookSelectPageState
 > {
   // state = { :  }
-  async componentDidMount() {}
+  async componentDidMount() {
+    const facebookAuthen = this.props.facebook.getFacebookAuthenJS()
+    if (!facebookAuthen.id) {
+      history.replace(PageName.facebookLogin)
+    }
+  }
 
   render() {
     const facebookAuthen = this.props.facebook.getFacebookAuthenJS()
     const profileImage = facebookAuthen.picture.data.url
-    console.log('facebookAuthen', facebookAuthen)
     const FacebookSelectPageImageList = this.props.facebook.getUserPageWithImageListJS()
     return (
       <div className={css.facebookSelectPage}>
