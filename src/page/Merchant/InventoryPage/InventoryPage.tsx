@@ -194,16 +194,10 @@ class InventoryPage extends React.Component<
     const changeStatusMenu = (
       <Menu>
         <Menu.Item>
-          <div>ร่าง</div>
+          <div>Publish</div>
         </Menu.Item>
         <Menu.Item>
-          <div>ยังไม่จ่าย</div>
-        </Menu.Item>
-        <Menu.Item>
-          <div>โอนแล้ว</div>
-        </Menu.Item>
-        <Menu.Item>
-          <div>เตรียมส่ง</div>
+          <div>Unpublish</div>
         </Menu.Item>
       </Menu>
     )
