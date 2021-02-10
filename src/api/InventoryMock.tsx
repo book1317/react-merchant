@@ -8,7 +8,7 @@ export const INVENTORIES = [
       'https://cf.shopee.co.th/file/90078a1bf6b41aa74e041ff0b92f6862_tn',
     price: 250.0,
     remaining: 10,
-    status: 'PENDING',
+    status: 'UNPUBLISH',
   },
   {
     name: 'ผ้าลายการ์ตูนอะนิเมะสําหรับตกแต่งห้องนอนเด็ก',
@@ -24,7 +24,7 @@ export const INVENTORIES = [
       'https://cf.shopee.co.th/file/bcb9021314691e77510ec49884297e26_tn',
     price: 100.0,
     remaining: 50,
-    status: 'ACTIVE',
+    status: 'PUBLISH',
   },
   {
     name:
@@ -33,7 +33,7 @@ export const INVENTORIES = [
       'https://cf.shopee.co.th/file/e3a9fa22b73b419917682935f7a60f40_tn',
     price: 7990.0,
     remaining: 10,
-    status: 'PENDING',
+    status: 'UNPUBLISH',
   },
   {
     name: 'VIDVIEW รองเท้าแตะสวมเด็ก VV 2502 เบา ใส่สบาย สีสดใส (ไซส์ 11-3)',
@@ -68,7 +68,7 @@ export const INVENTORIES = [
       'https://cf.shopee.co.th/file/310ebc96654d1b1e7404599134b7ed85_tn',
     price: 550.0,
     remaining: 50,
-    status: 'ACTIVE',
+    status: 'PUBLISH',
   },
   {
     name: 'ผ้าแขวนผนังลายการ์ตูนอนิเมะสําหรับตกแต่งห้อง',
@@ -76,20 +76,20 @@ export const INVENTORIES = [
       'https://cf.shopee.co.th/file/e39ce9013ccc5559004ca494e3aa433a_tn',
     price: 158.0,
     remaining: 40,
-    status: 'PENDING',
+    status: 'UNPUBLISH',
   },
   {
     name: 'เสื้อผ้าผู้ใหญ่',
     imageURL: catImage,
     price: 100.0,
     remaining: 2,
-    status: 'ACTIVE',
+    status: 'PUBLISH',
   },
   {
     name: 'เสื้อผ้าผู้ใหญ่',
     imageURL: catImage,
     price: 100.0,
     remaining: 3,
-    status: 'ACTIVE',
+    status: 'PUBLISH',
   },
 ]

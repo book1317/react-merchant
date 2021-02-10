@@ -34,11 +34,11 @@ class MerchantPage extends React.Component<
   IMerchantPageState
 > {
   componentDidMount() {
-    const isLogin = localStorage.getItem('isAuthen')
-    console.log('isLogin', isLogin)
-    if (!isLogin || isLogin !== 'OK') {
-      history.replace(PageName.login)
-    }
+    // const isLogin = localStorage.getItem('isAuthen')
+    // console.log('isLogin', isLogin)
+    // if (!isLogin || isLogin !== 'OK') {
+    //   history.replace(PageName.login)
+    // }
   }
   render() {
     let keyPath = window.location.pathname.split('/')

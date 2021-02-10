@@ -22,6 +22,7 @@ class ProductModal extends React.Component<
   IProductModalState
 > {
   refUpload = React.createRef() as any
+  refFrom = React.createRef() as any
 
   state = {
     fileList: [],
@@ -30,6 +31,7 @@ class ProductModal extends React.Component<
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.currentProduct !== prevProps.currentProduct) {
+      this.refFrom.current.resetFields()
       this.setState({ currentProduct: this.props.currentProduct })
     }
   }
@@ -92,6 +94,7 @@ class ProductModal extends React.Component<
             />
           </div>
           <Form
+            ref={this.refFrom}
             layout="vertical"
             name="nest-messages"
             onFinish={this.onFinish}

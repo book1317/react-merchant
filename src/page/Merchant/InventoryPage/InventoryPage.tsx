@@ -11,9 +11,9 @@ const catImage =
   'https://cf.shopee.co.th/file/18d8e8ef2e7ecd66a2ddbe885a01df30_tn'
 
 const ItemStatus = {
-  Pending: 'PENDING',
+  PUBLISH: 'PUBLISH',
+  UNPUBLISH: 'UNPUBLISH',
   SOLD: 'SOLD',
-  ACTIVE: 'ACTIVE',
 }
 
 export interface IInventoryPageProps {
@@ -107,6 +107,7 @@ class InventoryPage extends React.Component<
         dataIndex: 'price',
         key: 'price',
         render: (price: number) => <div>{formatPrice(price)}</div>,
+        className: css.priceColumn,
       },
       {
         title: 'คงเหลือ',
@@ -121,10 +122,10 @@ class InventoryPage extends React.Component<
         render: (status: string) => {
           let color = 'green'
           switch (status) {
-            case ItemStatus.ACTIVE:
+            case ItemStatus.PUBLISH:
               color = 'green'
               break
-            case ItemStatus.Pending:
+            case ItemStatus.UNPUBLISH:
               color = 'blue'
               break
             case ItemStatus.SOLD:

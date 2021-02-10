@@ -7,5 +7,14 @@
 }
 
 .ant-modal {
+  top: 5% !important;
   // animation-duration: 0s !important;
+}
+
+.ant-table-thead {
+  white-space: nowrap;
+
+  .ant-table-cell {
+    // padding: 10px 8px !important;
+  }
 }
