@@ -1,5 +1,6 @@
 import React from 'react'
 import { IProduct } from 'store/InventoryStore.d'
+import { initProduct } from 'store/InventoryStore'
 import { Modal, Button, Input, Form, Upload } from 'antd'
 import ImgCrop from 'antd-img-crop'
 import css from '../InventoryPage.module.scss'
@@ -13,6 +14,7 @@ export interface IProductModalProps {
 
 export interface IProductModalState {
   fileList: any
+  currentProduct: IProduct
 }
 
 class ProductModal extends React.Component<
@@ -23,6 +25,13 @@ class ProductModal extends React.Component<
 
   state = {
     fileList: [],
+    currentProduct: initProduct(),
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.currentProduct !== prevProps.currentProduct) {
+      this.setState({ currentProduct: this.props.currentProduct })
+    }
   }
 
   handleCancel = () => {
@@ -40,7 +49,8 @@ class ProductModal extends React.Component<
   onFinishFailed = () => {}
 
   onSelectImage = async ({ file }: any) => {
-    const { currentProduct, setCurrentProduct } = this.props
+    const { setCurrentProduct } = this.props
+    const { currentProduct } = this.state
     let src = file.url
     if (!src) {
       src = await new Promise((resolve) => {
@@ -61,7 +71,7 @@ class ProductModal extends React.Component<
       setIsShowProductModal,
     } = this.props
     const { fileList } = this.state
-
+    console.log('currentProduct', currentProduct)
     return (
       <Modal
         maskTransitionName=""
@@ -86,13 +96,31 @@ class ProductModal extends React.Component<
             name="nest-messages"
             onFinish={this.onFinish}
             onFinishFailed={this.onFinishFailed}
+            fields={[
+              {
+                name: ['productName'],
+                value: currentProduct.name,
+              },
+              {
+                name: ['detail'],
+                value: currentProduct.detail,
+              },
+              {
+                name: ['price'],
+                value: currentProduct.price,
+              },
+              {
+                name: ['remaining'],
+                value: currentProduct.remaining,
+              },
+            ]}
           >
             <Form.Item
               name="productImage"
               rules={[
                 () => ({
                   validator() {
-                    if (fileList.length > 0) {
+                    if (currentProduct.imageURL) {
                       return Promise.resolve()
                     }
                     return Promise.reject('Please upload your product image!')
@@ -115,7 +143,7 @@ class ProductModal extends React.Component<
 
             <Form.Item
               name="productName"
-              label="Product Name"
+              label="ชื่อสินค้า"
               rules={[
                 {
                   required: true,
@@ -135,7 +163,7 @@ class ProductModal extends React.Component<
 
             <Form.Item
               name="price"
-              label="Price"
+              label="ราคา"
               rules={[
                 {
                   required: true,
@@ -159,10 +187,10 @@ class ProductModal extends React.Component<
               <Input type="number" />
             </Form.Item>
             <Form.Item
-              name="quantity"
-              label="Quantity"
+              name="remaining"
+              label="คงเหลือ"
               rules={[
-                { required: true, message: 'Please input your quantity!' },
+                { required: true, message: 'Please input your remaining!' },
               ]}
             >
               <Input type="number" />

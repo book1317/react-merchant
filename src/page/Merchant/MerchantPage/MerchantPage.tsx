@@ -49,6 +49,7 @@ class MerchantPage extends React.Component<
         <Header className={css.header}>
           <div className={css.title}>Omagase V2</div>
           <Menu
+            className={'d-flex'}
             theme="light"
             mode="horizontal"
             defaultSelectedKeys={[PageName.inventory]}
@@ -74,7 +75,7 @@ class MerchantPage extends React.Component<
         </Header>
         <Layout className={css.contentContainer}>
           {/* <SideBar /> */}
-          <Layout style={{ padding: '24px 24px 24px' }}>
+          <Layout style={{ padding: '24px  24px 24px' }}>
             <Switch>
               <Route path={PageName.inventory} component={InventoryPage} />
               <Route path={PageName.transaction} component={TransactionPage} />

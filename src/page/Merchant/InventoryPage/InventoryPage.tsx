@@ -47,6 +47,7 @@ class InventoryPage extends React.Component<
   initProduct(): IProduct {
     return {
       name: '',
+      detail: '',
       imageURL: '',
       price: 0,
       remaining: 0,

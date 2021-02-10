@@ -7,6 +7,7 @@ export interface IInventory {
 
 export interface IProduct {
   name: string
+  detail: string
   imageURL: string
   price: number
   remaining: number

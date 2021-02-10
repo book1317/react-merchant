@@ -15,7 +15,7 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/18d8e8ef2e7ecd66a2ddbe885a01df30_tn',
     price: 151.0,
-    remaining: 50,
+    remaining: 0,
     status: 'SOLD',
   },
   {
@@ -24,7 +24,7 @@ export const INVENTORIES = [
       'https://cf.shopee.co.th/file/bcb9021314691e77510ec49884297e26_tn',
     price: 100.0,
     remaining: 50,
-    status: 'SOLD',
+    status: 'ACTIVE',
   },
   {
     name:
@@ -33,14 +33,14 @@ export const INVENTORIES = [
       'https://cf.shopee.co.th/file/e3a9fa22b73b419917682935f7a60f40_tn',
     price: 7990.0,
     remaining: 10,
-    status: 'ACTIVE',
+    status: 'PENDING',
   },
   {
     name: 'VIDVIEW รองเท้าแตะสวมเด็ก VV 2502 เบา ใส่สบาย สีสดใส (ไซส์ 11-3)',
     imageURL:
       'https://cf.shopee.co.th/file/bfe6515990836c2aa1979d5e26c8574b_tn',
     price: 100.0,
-    remaining: 50,
+    remaining: 0,
     status: 'SOLD',
   },
   {
@@ -49,7 +49,7 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/60508befa1fd5bfb3d0dbfcfe10823b7_tn',
     price: 28067.0,
-    remaining: 120,
+    remaining: 0,
     status: 'SOLD',
   },
   {
@@ -58,7 +58,7 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/eb866227d2be0563780c8777d45d6d76_tn',
     price: 100.0,
-    remaining: 50,
+    remaining: 0,
     status: 'SOLD',
   },
   {
@@ -68,28 +68,28 @@ export const INVENTORIES = [
       'https://cf.shopee.co.th/file/310ebc96654d1b1e7404599134b7ed85_tn',
     price: 550.0,
     remaining: 50,
-    status: 'SOLD',
+    status: 'ACTIVE',
   },
   {
     name: 'ผ้าแขวนผนังลายการ์ตูนอนิเมะสําหรับตกแต่งห้อง',
     imageURL:
       'https://cf.shopee.co.th/file/e39ce9013ccc5559004ca494e3aa433a_tn',
     price: 158.0,
-    remaining: 50,
-    status: 'SOLD',
+    remaining: 40,
+    status: 'PENDING',
   },
   {
     name: 'เสื้อผ้าผู้ใหญ่',
     imageURL: catImage,
     price: 100.0,
-    remaining: 50,
-    status: 'SOLD',
+    remaining: 2,
+    status: 'ACTIVE',
   },
   {
     name: 'เสื้อผ้าผู้ใหญ่',
     imageURL: catImage,
     price: 100.0,
-    remaining: 50,
-    status: 'SOLD',
+    remaining: 3,
+    status: 'ACTIVE',
   },
 ]
