@@ -47,7 +47,14 @@ class MerchantPage extends React.Component<
     return (
       <Layout className={css.merchantPage}>
         <Header className={css.header}>
-          <div className={css.title}>Omagase V2</div>
+          <div
+            className={css.title}
+            onClick={() => {
+              history.push(PageName.home)
+            }}
+          >
+            Omagase V2
+          </div>
           <Menu
             className={'d-flex'}
             theme="light"
