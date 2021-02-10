@@ -7,6 +7,8 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/90078a1bf6b41aa74e041ff0b92f6862_tn',
     price: 250.0,
+    pending: 0,
+    sold: 0,
     remaining: 10,
     status: 'UNPUBLISH',
   },
@@ -15,6 +17,8 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/18d8e8ef2e7ecd66a2ddbe885a01df30_tn',
     price: 151.0,
+    pending: 0,
+    sold: 1,
     remaining: 0,
     status: 'SOLD',
   },
@@ -23,6 +27,8 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/bcb9021314691e77510ec49884297e26_tn',
     price: 100.0,
+    pending: 10,
+    sold: 5,
     remaining: 50,
     status: 'PUBLISH',
   },
@@ -32,6 +38,8 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/e3a9fa22b73b419917682935f7a60f40_tn',
     price: 7990.0,
+    pending: 0,
+    sold: 0,
     remaining: 10,
     status: 'UNPUBLISH',
   },
@@ -40,6 +48,8 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/bfe6515990836c2aa1979d5e26c8574b_tn',
     price: 100.0,
+    pending: 0,
+    sold: 12,
     remaining: 0,
     status: 'SOLD',
   },
@@ -49,6 +59,8 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/60508befa1fd5bfb3d0dbfcfe10823b7_tn',
     price: 28067.0,
+    pending: 0,
+    sold: 100,
     remaining: 0,
     status: 'SOLD',
   },
@@ -58,6 +70,8 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/eb866227d2be0563780c8777d45d6d76_tn',
     price: 100.0,
+    pending: 0,
+    sold: 20,
     remaining: 0,
     status: 'SOLD',
   },
@@ -67,6 +81,8 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/310ebc96654d1b1e7404599134b7ed85_tn',
     price: 550.0,
+    pending: 10,
+    sold: 9,
     remaining: 50,
     status: 'PUBLISH',
   },
@@ -75,6 +91,8 @@ export const INVENTORIES = [
     imageURL:
       'https://cf.shopee.co.th/file/e39ce9013ccc5559004ca494e3aa433a_tn',
     price: 158.0,
+    pending: 0,
+    sold: 0,
     remaining: 40,
     status: 'UNPUBLISH',
   },
@@ -82,6 +100,8 @@ export const INVENTORIES = [
     name: 'เสื้อผ้าผู้ใหญ่',
     imageURL: catImage,
     price: 100.0,
+    pending: 10,
+    sold: 0,
     remaining: 2,
     status: 'PUBLISH',
   },
@@ -89,6 +109,8 @@ export const INVENTORIES = [
     name: 'เสื้อผ้าผู้ใหญ่',
     imageURL: catImage,
     price: 100.0,
+    pending: 10,
+    sold: 0,
     remaining: 3,
     status: 'PUBLISH',
   },

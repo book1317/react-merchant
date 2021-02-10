@@ -108,12 +108,35 @@ class InventoryPage extends React.Component<
         key: 'price',
         render: (price: number) => <div>{formatPrice(price)}</div>,
         className: css.priceColumn,
+        width: 120,
       },
       {
-        title: 'คงเหลือ',
+        title: 'สต็อค',
         dataIndex: 'remaining',
         key: 'remaining',
-        render: (remaining: number) => <div>{remaining} ชิ้น</div>,
+        render: (remaining: number) => (
+          <div className={css.itemNumbers}>{remaining}</div>
+        ),
+        width: 70,
+        align: 'center' as 'center',
+      },
+      {
+        title: 'จอง',
+        dataIndex: 'pending',
+        key: 'pending',
+        render: (pending: number) => (
+          <div className={css.itemNumbers}>{pending}</div>
+        ),
+        width: 70,
+        align: 'center' as 'center',
+      },
+      {
+        title: 'ขาย',
+        dataIndex: 'sold',
+        key: 'sold',
+        render: (sold: number) => <div className={css.itemNumbers}>{sold}</div>,
+        width: 70,
+        align: 'center' as 'center',
       },
       {
         title: 'สถานะ',
@@ -133,6 +156,7 @@ class InventoryPage extends React.Component<
           }
           return <Tag color={color}>{status}</Tag>
         },
+        width: 70,
       },
     ]
 
@@ -240,6 +264,7 @@ class InventoryPage extends React.Component<
         </div>
         <div className={css.tableContainer}>
           <Table
+            scroll={{ x: 800 }}
             rowSelection={{ ...rowSelection, type: 'checkbox' }}
             columns={columns}
             dataSource={data}
