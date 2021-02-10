@@ -7,6 +7,11 @@
     padding-left: 20px;
     padding-right: 20px;
     background-color: white;
+
+    .headerItem {
+      min-width: 50px;
+      text-align: center;
+    }
   }
 
   .title {
@@ -16,6 +21,6 @@
   }
 
   .contentContainer {
-    height: 100vh;
+    min-height: 100vh;
   }
 }

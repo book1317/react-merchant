@@ -1,21 +1,14 @@
 import React from 'react'
-import { Table, Tag, Modal, Button, Input, Form, Upload } from 'antd'
+import { Table, Tag, Button, Input, Dropdown, Menu } from 'antd'
 import css from './InventoryPage.module.scss'
 import { IFacebookStore } from 'store/FacebookStore.d'
 import { inject, observer } from 'mobx-react'
 import { formatPrice } from 'utils/Format'
-import ImgCrop from 'antd-img-crop'
 import ProductModal from './components/ProductModal'
+import { IInventoryStore, IProduct } from 'store/InventoryStore.d'
 
 const catImage =
   'https://cf.shopee.co.th/file/18d8e8ef2e7ecd66a2ddbe885a01df30_tn'
-
-export interface IProduct {
-  name: string
-  imageURL: string
-  price: number
-  remaining: number
-}
 
 const ItemStatus = {
   Pending: 'PENDING',
@@ -25,31 +18,16 @@ const ItemStatus = {
 
 export interface IInventoryPageProps {
   facebook: IFacebookStore
+  inventory: IInventoryStore
 }
 
 export interface IInventoryPageState {
   isShowProductModal: boolean
   currentProduct: IProduct
+  selectedRows: any
 }
 
-const INVENTORY_DATA = [
-  {
-    name: 'เสื้อผ้าเด็ก',
-    imageURL: catImage,
-    price: 50.0,
-    remaining: 10,
-    status: 'PENDING',
-  },
-  {
-    name: 'เสื้อผ้าผู้ใหญ่',
-    imageURL: catImage,
-    price: 100.0,
-    remaining: 50,
-    status: 'SOLD',
-  },
-]
-
-@inject('facebook')
+@inject('facebook', 'inventory')
 @observer
 class InventoryPage extends React.Component<
   IInventoryPageProps,
@@ -61,6 +39,7 @@ class InventoryPage extends React.Component<
     this.state = {
       isShowProductModal: false,
       currentProduct: this.initProduct(),
+      selectedRows: [],
     }
     this.refUpload = React.createRef()
   }
@@ -74,8 +53,10 @@ class InventoryPage extends React.Component<
     }
   }
 
-  componentDidMount() {
-    const FacebookSelectPageImageList = this.props.facebook.getUserPageWithImageListJS()
+  async componentDidMount() {
+    const UserID = ''
+    await this.props.inventory.getInventories(UserID)
+    // const FacebookSelectPageImageList = this.props.facebook.getUserPageWithImageListJS()
   }
 
   openProductModal = (product: any) => {
@@ -120,21 +101,6 @@ class InventoryPage extends React.Component<
           </div>
         ),
       },
-      // {
-      //   title: 'รูป',
-      //   dataIndex: 'image',
-      //   key: 'image',
-      //   render: (image: IImageDetail) => (
-      //     <div
-      //       className={css.imageDetail}
-      //       onClick={() => {
-      //         this.openProductModal(image)
-      //       }}
-      //     >
-      //       ดูรูป
-      //     </div>
-      //   ),
-      // },
       {
         title: 'ราคา',
         dataIndex: 'price',
@@ -168,14 +134,74 @@ class InventoryPage extends React.Component<
       },
     ]
 
-    const data = (INVENTORY_DATA as any).map((item: any, index: number) => {
+    const inventories = this.props.inventory.getInventoriesJS()
+    const data = inventories.map((item: any, index: number) => {
       item['key'] = index
-      item['product'] = { imageURL: item.imageURL, name: item.name }
-      item['image'] = { imageURL: item.imageURL, name: item.name }
+      item['product'] = { ...item }
       return item
     })
 
-    const { isShowProductModal, currentProduct } = this.state
+    const rowSelection = {
+      onChange: (selectedRowKeys, selectedRows) => {
+        console.log(
+          `selectedRowKeys: ${selectedRowKeys}`,
+          'selectedRows: ',
+          selectedRows
+        )
+        this.setState({ selectedRows })
+      },
+      onSelect: (record, selected, selectedRows) => {
+        console.log(record, selected, selectedRows)
+        this.setState({ selectedRows })
+      },
+      onSelectAll: (selected, selectedRows, changeRows) => {
+        console.log(selected, selectedRows, changeRows)
+        this.setState({ selectedRows })
+      },
+      // renderCell: (checked, record) => (
+      //   <div>
+      //     <Checkbox checked={checked} />
+      //   </div>
+      // ),
+    }
+
+    const changeStatusMenu = (
+      <Menu>
+        <Menu.Item>
+          <div>ร่าง</div>
+        </Menu.Item>
+        <Menu.Item>
+          <div>ยังไม่จ่าย</div>
+        </Menu.Item>
+        <Menu.Item>
+          <div>โอนแล้ว</div>
+        </Menu.Item>
+        <Menu.Item>
+          <div>เตรียมส่ง</div>
+        </Menu.Item>
+      </Menu>
+    )
+
+    const printMenu = (
+      <Menu>
+        <Menu.Item>
+          <div>จ่าหน้าผู้รับ</div>
+        </Menu.Item>
+        <Menu.Item>
+          <div>จ่าหน้าผู้รับและผู้ส่ง</div>
+        </Menu.Item>
+      </Menu>
+    )
+
+    const downloadMenu = (
+      <Menu>
+        <Menu.Item>
+          <div>ดาวน์โหลด CSV</div>
+        </Menu.Item>
+      </Menu>
+    )
+
+    const { isShowProductModal, currentProduct, selectedRows } = this.state
 
     return (
       <div className={css.inventoryPage}>
@@ -185,15 +211,34 @@ class InventoryPage extends React.Component<
           setIsShowProductModal={this.setIsShowProductModal}
           setCurrentProduct={this.setCurrentProduct}
         />
-        <div className={css.optionMenuContainer}>
-          <Input placeholder="ค้นหา" className={css.searchInput} />
+        <div className={css.optionMenuContainer2}>
           <Button className={css.addItemButton} onClick={this.onAddItem}>
             + เพิ่มสินค้า
           </Button>
         </div>
+        <div className={css.optionMenuContainer}>
+          <Input placeholder="ค้นหา" className={css.searchInput} />
+          <div className={css.optionMenuContainer2}>
+            <Dropdown overlay={changeStatusMenu}>
+              <Button className={css.optinButton}>
+                เปลี่ยนสถานะ ({selectedRows.length})
+              </Button>
+            </Dropdown>
+            <Dropdown overlay={printMenu}>
+              <Button className={css.optinButton}>
+                พิมพ์ ({selectedRows.length})
+              </Button>
+            </Dropdown>
+            <Dropdown overlay={downloadMenu}>
+              <Button className={css.optinButton}>
+                ดาวน์โหลด ({selectedRows.length})
+              </Button>
+            </Dropdown>
+          </div>
+        </div>
         <div className={css.tableContainer}>
           <Table
-            rowSelection={{ type: 'checkbox' }}
+            rowSelection={{ ...rowSelection, type: 'checkbox' }}
             columns={columns}
             dataSource={data}
             size="small"

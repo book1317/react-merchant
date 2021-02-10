@@ -57,6 +57,7 @@ class MerchantPage extends React.Component<
           >
             {MenuList.map(({ key, content }) => (
               <Menu.Item
+                className={css.headerItem}
                 onClick={() => {
                   if (key === PageName.facebookLogin) {
                     localStorage.removeItem('isAuthen')

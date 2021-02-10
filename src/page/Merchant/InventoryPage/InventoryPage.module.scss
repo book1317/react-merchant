@@ -5,14 +5,27 @@
     display: flex;
     justify-content: space-between;
     margin: 20px 0px;
+  }
 
-    .searchInput {
-      width: 40%;
-      border-radius: $borderRadius;
-    }
-    .addItemButton {
-      border-radius: $borderRadius;
-    }
+  .optionMenuContainer2 {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .searchInput {
+    width: 40%;
+    border-radius: $borderRadius;
+    min-width: 100px;
+  }
+  .addItemButton {
+    border-radius: $borderRadius;
+    min-width: 100px;
+  }
+
+  .optinButton {
+    margin-left: 10px;
+    border-radius: $borderRadius;
+    min-width: 100px;
   }
 
   .imageDetail {

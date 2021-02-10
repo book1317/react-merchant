@@ -1,5 +1,5 @@
 import React from 'react'
-import { IProduct } from '../InventoryPage'
+import { IProduct } from 'store/InventoryStore.d'
 import { Modal, Button, Input, Form, Upload } from 'antd'
 import ImgCrop from 'antd-img-crop'
 import css from '../InventoryPage.module.scss'
